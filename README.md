@@ -17,6 +17,10 @@ Many little improvements have been made to i3lock over time:
 
 - i3lock uses PAM and therefore is compatible with LDAP etc.
 
+Additions and Changes
+---------------------
+- Unlock indicator now surrounds the screen, soon to be an option flag
+
 Requirements
 ------------
 - pkg-config
@@ -35,7 +39,3 @@ Running i3lock
 -------------
 Simply invoke the 'i3lock' command. To get out of it, enter your password and
 press enter.
-
-Upstream
---------
-Please submit pull requests to https://github.com/i3/i3lock
