@@ -16,6 +16,7 @@ Many little improvements have been made to i3lock over time:
 - You can specify whether i3lock should bell upon a wrong password.
 
 - i3lock uses PAM and therefore is compatible with LDAP etc.
+  On OpenBSD i3lock uses the bsd_auth(3) framework.
 
 Additions and Changes
 ---------------------
@@ -29,6 +30,7 @@ Requirements
 - libpam-dev
 - libcairo-dev
 - libxcb-xinerama
+- libxcb-randr
 - libev
 - libx11-dev
 - libx11-xcb-dev
