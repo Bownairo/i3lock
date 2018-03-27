@@ -151,7 +151,7 @@ if (xr_screens > 0) {
             //DRAW INDICATOR ON IT'S OWN THING
             //***************************************************************
             if (unlock_indicator &&
-                (unlock_state >= STATE_KEY_PRESSED || pam_state > STATE_AUTH_IDLE)) {
+                (unlock_state >= STATE_KEY_PRESSED || auth_state > STATE_AUTH_IDLE)) {
 //                cairo_scale(ctx, scaling_factor(), scaling_factor());
                 /* Draw a (centered) circle with transparent background. */
                 cairo_set_line_width(ctx, 10.0);
@@ -169,7 +169,7 @@ if (xr_screens > 0) {
 
                 /* Use the appropriate color for the different AUTH states
                  * (currently verifying, wrong password, or default) */
-                switch (pam_state) {
+                switch (auth_state) {
                     case STATE_AUTH_VERIFY:
                     case STATE_AUTH_LOCK:
                         cairo_set_source_rgba(ctx, 0, 114.0 / 255, 255.0 / 255, 0.75);
@@ -184,7 +184,7 @@ if (xr_screens > 0) {
                 }
                 //cairo_fill_preserve(ctx);
 
-                switch (pam_state) {
+                switch (auth_state) {
                     case STATE_AUTH_VERIFY:
                     case STATE_AUTH_LOCK:
                         cairo_set_source_rgb(ctx, 51.0 / 255, 0, 250.0 / 255);
@@ -225,7 +225,7 @@ if (xr_screens > 0) {
                 cairo_set_source_rgb(ctx, 0, 0, 0);
                 cairo_select_font_face(ctx, "sans-serif", CAIRO_FONT_SLANT_NORMAL, CAIRO_FONT_WEIGHT_NORMAL);
                 cairo_set_font_size(ctx, 28.0);
-                switch (pam_state) {
+                switch (auth_state) {
                     case STATE_AUTH_VERIFY:
                         text = "verifying…";
                         break;
